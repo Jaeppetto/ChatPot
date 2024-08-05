@@ -151,7 +151,7 @@ function RecipePage(props) {
                 isClickToPauseDisabled={true}
               />
             </div>
-            <div style={{ fontSize: '145%' }}>
+            <div style={{ fontSize: '145%', userSelect: 'none' }}>
               동일한 옵션의
               <br />
               다른 메뉴를 추천해드릴게요

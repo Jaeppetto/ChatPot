@@ -200,7 +200,7 @@ function OptionTest(props) {
                   isClickToPauseDisabled={true}
                 />
               </div>
-              <div style={{ fontSize: '145%' }}>
+              <div style={{ fontSize: '145%', userSelect: 'none' }}>
                 <b>챗팟</b>이 맛있는 레시피를<br></br> 추천해드릴게요
               </div>
             </Loading>
