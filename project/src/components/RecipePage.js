@@ -25,6 +25,8 @@ import * as Result from '../lottie/result1.json';
 import html2canvas from 'html2canvas';
 import logoBM from '../img/logoBM.png';
 
+const API_ENDPOINT = process.env.REACT_APP_API_URL;
+
 function RecipePage(props) {
   let Navigate = useNavigate();
   let dispatch = useDispatch();
@@ -62,13 +64,15 @@ function RecipePage(props) {
   };
 
   const handleClick = () => {
+    console.log(State);
     const messages = State.receiveData.messages;
     const sendData = { messages };
     setLoading(true);
 
     axios
-      // .post(`${API_ENDPOINT}/recipe`, sendData)
-      .post('/api/recipe', sendData)
+      //! 최종 PR 시 상대주소로 변경
+      .post(`${API_ENDPOINT}/recipe`, '다른 메뉴를 추천해줘')
+      // .post('/api/recipe', sendData)
       .then((res) => {
         const respond = res.data;
 

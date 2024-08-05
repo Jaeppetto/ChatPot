@@ -80,10 +80,12 @@ function OptionTest(props) {
     const sendData = { ingredients, option };
 
     axios
-      // .post(`${API_ENDPOINT}/selectOption`, sendData)
-      .post('/api/selectOption', sendData)
+      //! 최종 PR 시 상대주소로 변경
+      .post(`${API_ENDPOINT}/selectOption`, sendData)
+      // .post('/api/selectOption', sendData)
       .then((res) => {
         const respond = res.data;
+        console.log(respond);
         dispatch(setReceiveData(respond));
 
         setLoading(false);

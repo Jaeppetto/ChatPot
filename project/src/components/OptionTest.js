@@ -24,6 +24,8 @@ import loadingAnimation from '../lottie/loading.json';
 import emptyAnimatiion from '../lottie/empty.json';
 import * as Error from '../lottie/error.json';
 
+const API_ENDPOINT = process.env.REACT_APP_API_URL;
+
 function OptionTest(props) {
   const { register, handleSubmit, reset } = useForm();
   let Navigate = useNavigate();
@@ -78,8 +80,9 @@ function OptionTest(props) {
     }
 
     axios
-      // .post(`${API_ENDPOINT}/selectOption`, sendData)
-      .post('/api/selectOption', sendData)
+      //! 최종 PR 시 상대주소로 변경
+      .post(`${API_ENDPOINT}/selectOption`, sendData)
+      // .post('/api/selectOption', sendData)
       .then((res) => {
         const respond = res.data;
 
